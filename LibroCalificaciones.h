@@ -5,9 +5,9 @@
  *
  *    Description:  Reporte de calificaciones
  *
- *        Created:  2019-08-12
+ *        Created:  2019-08-18
  *
- *         Author:  Maikol Guzman Alan mikeguzman@gmail.com
+ *         Author:  Brandon Alexander Arguedas Murillo brandonxd1970@gmail.com
  *   Organization:  Universidad Nacional de Costa Rica
  *
  * =====================================================================================
@@ -19,10 +19,33 @@
 
 #include <string>
 
+// Costantes
+static const int ESTUDIANTES = 10;
+static const int EXAMENES = 3;
+
 class LibroCalificaciones {
+	std::string nombreCurso;
+	int calificaciones[ESTUDIANTES][EXAMENES];
+
+	// Métodos
+	int obtenerNotaMinima();
+	int obtenerNotaMaxima();
+	double obtenerPromedio(const int[], const int);
 
 public:
 
+	// Constructores
+	LibroCalificaciones();
+	LibroCalificaciones(const std::string &nombreCurso, int[][EXAMENES]);
+
+	// Métodos
+	std::string obtenerReporteNotas();
+	std::string obtenerReporteNotasMaxMin();
+
+	// Get y Set
+	const std::string &getNombreCurso() const;
+
+	void setNombreCurso(const std::string &nombreCurso);
 };
 
 
