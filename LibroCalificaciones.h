@@ -19,7 +19,7 @@
 
 #include <string>
 
-// Costantes
+// Costantes.
 static const int ESTUDIANTES = 10;
 static const int EXAMENES = 3;
 
@@ -27,14 +27,14 @@ class LibroCalificaciones {
 	std::string nombreCurso;
 	int calificaciones[ESTUDIANTES][EXAMENES];
 
-	// Métodos
+	// Métodos.
 	int obtenerNotaMinima();
 	int obtenerNotaMaxima();
 	double obtenerPromedio(const int[], const int);
 
 public:
 
-	// Constructores
+	// Constructores.
 	LibroCalificaciones();
 	LibroCalificaciones(const std::string &nombreCurso, int[][EXAMENES]);
 
@@ -42,7 +42,7 @@ public:
 	std::string obtenerReporteNotas();
 	std::string obtenerReporteNotasMaxMin();
 
-	// Get y Set
+	// Get y Set.
 	const std::string &getNombreCurso() const;
 
 	void setNombreCurso(const std::string &nombreCurso);
