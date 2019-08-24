@@ -26,11 +26,11 @@ LibroCalificaciones::LibroCalificaciones() { //Constructor sin parametros.
 }
 
 LibroCalificaciones::LibroCalificaciones(const std::string &nombreCurso, int[][EXAMENES]) { //Constructor con parametros.
-	int arrgeloCalificacion[ESTUDIANTES][EXAMENES]=listaCalificaciones
+	int arregloCalificaciones[ESTUDIANTES][EXAMENES] = { ESTUDIANTES };
 	// Copiar notas del arreglo
 	for (int estudiante = 1; estudiante <= ESTUDIANTES; estudiante++) {
 		for (int examen = 1; examen <= EXAMENES; examen++) {
-			calificaciones[estudiante][examen] =arregloCalificaciones[estudiante][examen];
+			calificaciones[estudiante][examen] = arregloCalificaciones[estudiante][examen];
 		}
 	}
 }
@@ -63,9 +63,9 @@ int LibroCalificaciones::obtenerNotaMaxima() {//Metodo de obtencion de la nota m
 
 double LibroCalificaciones::obtenerPromedio(const int[], const int) { //Metodo para obtener el promedio entre las notas del estudiante.
 	double promedio = 0;
-
+	
 	for (int examen = 1; examen <= EXAMENES; examen++) {
-		promedio += calificaciones[][examen] / EXAMENES;
+		promedio += calificaciones[ESTUDIANTES][examen] / EXAMENES;
 	}
 	return promedio;
 }
